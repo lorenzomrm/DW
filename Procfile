@@ -1,1 +1,1 @@
-web: gunicorn projetoanimal.wsgi
+web: gunicorn projetoanimal.wsgi --log-file -
