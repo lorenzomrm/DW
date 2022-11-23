@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi&Au-Adoção</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body class="fundo">
+
+    <header>
+        <img id="banner" src="{% static 'images/h1.png' %}"/>
+        <h1 id="titulo">Mi&Au</h1>
+        <h4>O site para todos os pets</h4>
+    </header>
+
+    <div class="navbar">
+        <a href="\index">Home</a>
+        <a href="" class="active">Adoção</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#" class="right">Login</a>
+    </div>
+
+    <div class="content">
+        <article id="anuncios">
+            <h2>esta é a página com os pets para adoção</h2>
+            <div class="anuncio">anuncio1</div>
+            <div class="anuncio">anuncio2</div>
+        </article>
+
+    </div>
+
+    <button onclick="topFunction()" id="Btn" title="Subir">Ir para o topo</button>
+
+    <footer>
+        Projeto Mi&Au
+        <br>
+        Desenvolvimento WEB
+        <br>
+        Beatriz e Lorenzo
+    </footer>
+    <script src="{% static 'botao.js' %}"></script>
+</body>
+</html>
