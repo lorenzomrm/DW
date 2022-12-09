@@ -18,6 +18,17 @@ header {
     background-color: white;
     color: #a8c8f0;
 }
+.content {
+    width: 1098px;
+    margin: auto;
+}
+
+article {
+    background-color: white;
+    padding: 30px;
+    border: solid 1px black;
+    margin-bottom: 30px;
+}
 
 #titulo{
     font-size: 80px;
@@ -70,18 +81,6 @@ h4{
   color: #213047;
 }
 
-.content {
-    width: 1098px;
-    margin: auto;
-}
-
-article {
-    background-color: white;
-    padding: 30px;
-    border: solid 1px black;
-    margin-bottom: 100px;
-}
-
 footer {
     margin-top: 200px;
     border: solid black 1px;
@@ -107,8 +106,8 @@ footer {
     border: solid 1px black;
     color: red;
     float: left;
+    cursor: pointer;
 }
-
 
 #Btn {
     display: none;
