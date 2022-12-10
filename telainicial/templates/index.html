@@ -48,7 +48,23 @@
             <h2>Blog</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
         </article>
-
+        <article>
+                      <tbody>
+          {% for dbs in db %}
+            <tr>
+              <th>{{dbs.id}}</th>
+              <td>{{dbs.nome}}</td>
+              <td>{{dbs.idade}}</td>
+              <td>{{dbs.sexo}}</td>
+              <td>
+                  <a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                  <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                  <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </article>
     </div>
 
     <button onclick="topFunction()" id="Btn" title="Subir">Ir para o topo</button>
