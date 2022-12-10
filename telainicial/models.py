@@ -9,7 +9,7 @@ def get_file_path(_instance, filename):
     return filename
 class Pets(models.Model):
     MF = [('M', 'Macho'), ('F', 'Fêmea')]
-    Especies = [('C','Cão'), ('G','Gato')]
+    Especies = [('Cão','Cão'), ('Gato','Gato')]
     Tamanhos = [('XP','Mini'),('P','Pequeno'),('M','Médio'),('G','Grande'),('XG','Extra Grande')]
     Castracao = [('S', 'Sim'), ('N', 'Não')]
     nome = models.CharField(max_length=100)

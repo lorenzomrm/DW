@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1> CRUD no Django </h1>
+        <h1> Cadastre um pet para pessoas poderem adotar :)</h1>
     </div>
 
     <div class="col-8 m-auto pt-2 pb-2 text-center">
@@ -19,15 +19,15 @@
         <div id="result"></div>
         <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
             {% csrf_token %}
-            <div class="form-group mt-4">Modelo: {{form.nome}}</div>
-            <div class="form-group mt-4">Marca: {{form.idade}}</div>
-            <div class="form-group mt-4">Ano: {{form.sexo}}</div>
-            <div class="form-group mt-4">Ano: {{form.especie}}</div>
-            <div class="form-group mt-4">Ano: {{form.raca}}</div>
-            <div class="form-group mt-4">Ano: {{form.porte}}</div>
-            <div class="form-group mt-4">Ano: {{form.descricao}}</div>
-            <div class="form-group mt-4">Ano: {{form.castrado}}</div>
-            <div class="form-group mt-4">Ano: {{form.imagem}}</div>
+            <div class="form-group mt-4">Nome: {{form.nome}}</div>
+            <div class="form-group mt-4">Idade: {{form.idade}}</div>
+            <div class="form-group mt-4">Sexo: {{form.sexo}}</div>
+            <div class="form-group mt-4">Espécie: {{form.especie}}</div>
+            <div class="form-group mt-4">Raça: {{form.raca}}</div>
+            <div class="form-group mt-4">Porte (tamanho): {{form.porte}}</div>
+            <div class="form-group mt-4">Descrição: {{form.descricao}}</div>
+            <div class="form-group mt-4">O pet é castrado?: {{form.castrado}}</div>
+            <div class="form-group mt-4">Adicione uma imagem: {{form.imagem}}</div>
 
             <input type="submit" class="btn btn-success" value="Salvar">
         </form>

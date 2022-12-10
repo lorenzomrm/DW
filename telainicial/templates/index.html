@@ -29,8 +29,24 @@
             <h2>Adoção</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
             <br>
-            <div class="anuncio">anuncio1</div>
-            <div class="anuncio">anuncio2</div>
+            <div class="anuncio">
+                {% block content %}
+                <div>
+                {% for pet in pets %}
+                    <div class="petname">
+                        <a href="{% url 'pet_detail' pet.id %}">
+                            <h3>{{ pet.nome}}</h3>
+                        </a>
+                        <p>{{ pet.especie }}</p>
+                        {% if pet.idade %}
+                        <p>Idade: {{ pet.idade}}</p>
+                        {% endif %}
+                        <img>{{ pet.imagem }}</img>
+                        </div>
+                        {% endfor %}
+                </div>
+                {% endblock %}
+            </div>
         </article>
         <article>
             <h2>Sobre</h2>
@@ -42,20 +58,13 @@
         </article>
         <article>
             <h2>Serviços</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
-        </article>
-        <article>
-            <h2>Blog</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
-        </article>
-        <article>
-                      <tbody>
+          <tbody>
           {% for dbs in db %}
             <tr>
               <th>{{dbs.id}}</th>
-              <td>{{dbs.nome}}</td>
-              <td>{{dbs.idade}}</td>
-              <td>{{dbs.sexo}}</td>
+              <td>{{dbs.modelo}}</td>
+              <td>{{dbs.marca}}</td>
+              <td>{{dbs.ano}}</td>
               <td>
                   <a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
                   <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
@@ -63,7 +72,10 @@
               </td>
             </tr>
           {% endfor %}
-          </tbody>
+          </tbody>        </article>
+        <article>
+            <h2>Blog</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
         </article>
     </div>
 
