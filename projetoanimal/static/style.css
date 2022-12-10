@@ -28,6 +28,11 @@ article {
     padding: 30px;
     border: solid 1px black;
     margin-bottom: 30px;
+    height: fit-content;
+}
+
+hr{
+    border-top: 3px dashed lightblue;
 }
 
 #titulo{

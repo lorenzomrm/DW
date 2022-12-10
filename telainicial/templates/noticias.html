@@ -1,0 +1,53 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi&Au-Notícias</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body class="fundo">
+
+    <header>
+        <img id="banner" src="{% static 'images/h1.png' %}"/>
+        <h1 id="titulo">Mi&Au</h1>
+        <h4>O site para todos os pets</h4>
+    </header>
+
+    <div class="navbar">
+        <a href="/" >Home</a>
+        <a href="\form">Adoção</a>
+        <a href="\sobre">Sobre</a>
+        <a href=" " class="active">Notícias</a>
+        <a href="\login" class="right">Login</a>
+    </div>
+
+    <div class="content">
+        <article>
+            <h2>Notícias</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+        </article>
+        <article>
+            <h2>Procura-se</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+        </article>
+        <article>
+            <h2>Blog</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+        </article>
+    </div>
+
+    <button onclick="topFunction()" id="Btn" title="Subir">Ir para o topo</button>
+
+    <footer>
+        Projeto Mi&Au
+        <br>
+        Desenvolvimento WEB
+        <br>
+        Beatriz e Lorenzo
+    </footer>
+    <script src="{% static 'botao.js' %}"></script>
+</body>
+</html>

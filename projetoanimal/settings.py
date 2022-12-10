@@ -15,7 +15,7 @@ SECRET_KEY = ')0ex2r9^actjv%a8fo(=#8^@a$k+0ledyunrxbn$%xf&bq@g!p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'telainicial.apps.TelainicialConfig',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -46,7 +47,7 @@ ROOT_URLCONF = 'projetoanimal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,4 +117,5 @@ STATICFILES_DIRS = (
 
     '/static/style.css',
 )
+LOGIN_REDIRECT_URL = '/'
 django_heroku.settings(locals())

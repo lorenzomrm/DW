@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from telainicial.models import Pets
 from telainicial.forms import PetsForm
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
+
+
 # Create your views here.
 def index(request):
     dados = {}
@@ -14,12 +16,26 @@ def index(request):
     return render(request, 'index.html', {'pets': pets})
     #return render(request, 'index.html', dados)
 
+
 def form(request):
     data = {}
     data['form'] = PetsForm()
     return render(request, 'form.html', data)
-def adocao(request):
-    return render(request, 'adocao.html')
+
+def sobre(request):
+    return render(request, 'sobre.html')
+
+def noticias(request):
+    return render(request, 'noticias.html')
+
+def login(request):
+    return render(request, 'login.html')
+
+def create(request):
+    form = PetsForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return render(request,'index')
 
 def pet_detial(request, id):
     try:
@@ -27,12 +43,6 @@ def pet_detial(request, id):
     except Pets.DoesNotExist:
         raise Http404('pet not found')
     return render(request,'pet_detail.html', {'pet': pet})
-
-def create(request):
-    form = PetsForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('home')
 
 def view(request, pk):
     data = {}
@@ -54,6 +64,6 @@ def update(request, pk):
         return redirect('home')
 
 def delete(request, pk):
-    db = Carros.objects.get(pk=pk)
+    db = Pets.objects.get(pk=pk)
     db.delete()
     return redirect('home')

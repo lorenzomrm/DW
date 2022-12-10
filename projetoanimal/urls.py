@@ -8,6 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('telainicial.urls')),
     path('index', include('telainicial.urls')),
-    path('adocao', include('telainicial.urls')),
     url(r'^adoptions/(\d+)/', views.pet_detial, name='pet_detail'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
