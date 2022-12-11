@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from telainicial.models import Pets
 from telainicial.forms import PetsForm
 from django.http import Http404, HttpResponseRedirect
-
+from django.shortcuts import  render, redirect
 
 # Create your views here.
 def index(request):

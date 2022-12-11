@@ -4,7 +4,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Mi&Au-Adoções</title>
+    <title>Mi&Au-Cadastro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="{% static 'style.css' %}" rel="stylesheet">
 </head>
@@ -34,8 +34,20 @@
             <h2>Cadastre um pet para adoção :)</h2><hr>
             <div class="col-8 m-auto pt-2 pb-2 text-center">
         <div id="result"></div>
-                <div class="callout callout-warning">Você precisa estar logado para cadastar um animal!</div>
-                <button type="button" class="btn btn-primary"><a href="\accounts/login" style="color:white">Fazer login</a></button>
+        <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
+            {% csrf_token %}
+            <div class="form-group mt-4">Nome: {{form.nome}}</div>
+            <div class="form-group mt-4">Idade: {{form.idade}}</div>
+            <div class="form-group mt-4">Sexo: {{form.sexo}}</div>
+            <div class="form-group mt-4">Espécie: {{form.especie}}</div>
+            <div class="form-group mt-4">Raça: {{form.raca}}</div>
+            <div class="form-group mt-4">Porte (tamanho): {{form.porte}}</div>
+            <div class="form-group mt-4">Descrição: {{form.descricao}}</div>
+            <div class="form-group mt-4">O pet é castrado?: {{form.castrado}}</div>
+            <div class="form-group mt-4">Adicione uma imagem: {{form.imagem}}</div><br><hr>
+            <a class="col-8 m-auto pt-2 pb-2 text-center" href="/" class="btn btn-info"> Voltar </a>
+            <input type="submit" class="btn btn-success" value="Salvar">
+        </form>
     </div>
 
     <button onclick="topFunction()" id="Btn" title="Subir">Ir para o topo</button>

@@ -1,6 +1,6 @@
 from django.db import models
 import uuid
-from stdimage.models import StdImageField
+from stdimage import StdImageField
 
 # Create your models here.
 def get_file_path(_instance, filename):

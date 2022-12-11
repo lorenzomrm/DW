@@ -29,6 +29,7 @@ article {
     border: solid 1px black;
     margin-bottom: 30px;
     height: fit-content;
+    align-items: stretch;
 }
 
 hr{
@@ -99,19 +100,60 @@ footer {
     color: white;
 }
 
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+.callout-warning{
+    border-left-color: #f0ad4e;
+}
+
 #banner{
     width: 290px;
     margin-top: -39px;
     float: left;
 }
 
+a{
+    color: black;
+}
+
+a:hover{
+    color: lightblue;
+}
+
+.anunciados{
+    margin-bottom: 20px;
+}
+
+.lista-pets{
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 100px 0;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.lista-pets .anuncio{
+    border-radius: 16px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 190px 30px;
+    padding: 10px 15px 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .anuncio{
     padding: 20px;
     margin: 10px;
     border: solid 1px black;
-    color: red;
+    color: #213047;
     float: left;
-    cursor: pointer;
 }
 
 #Btn {
@@ -138,7 +180,7 @@ footer {
 }
 
 .fl{
-    color: blue;
+    color: #213047;
     margin: auto;
     padding: 50px;
     border-top: 3px dashed lightblue;
