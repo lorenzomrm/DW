@@ -27,6 +27,7 @@ def set_pet(request):
     castrado = request.POST.get('castrado')
     email = request.POST.get('email')
     telefone = request.POST.get('telefone')
+    bairro = request.POST.get('bairro')
     file = request.FILES.get('file')
     user = request.user
     pet_id = request.POST.get('pet_id')
@@ -43,11 +44,12 @@ def set_pet(request):
             pet.castrado = castrado
             pet.email = email
             pet.telefone = telefone
+            pet.bairro = bairro
             if file:
                 pet.foto = file
             pet.save()
     else:
-        pet = Pet.objects.create(nome=nome, idade=idade, sexo=sexo, especie=especie, raca=raca, porte=porte, descricao=descricao, castrado=castrado, email=email, telefone=telefone,
+        pet = Pet.objects.create(nome=nome, idade=idade, sexo=sexo, especie=especie, raca=raca, porte=porte, descricao=descricao, castrado=castrado, email=email, telefone=telefone, bairro=bairro,
                                 user=user, foto=file)
     url = '/pet/detail/{}/'.format(pet.id)
     return redirect(url)

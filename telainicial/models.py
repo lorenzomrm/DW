@@ -18,6 +18,7 @@ class Pet(models.Model):
     castrado = models.CharField(choices=Castracao, max_length=3, null=True)
     telefone = models.CharField(max_length=11, null=True)
     email = models.EmailField(null=True, blank=True)
+    bairro = models.CharField(max_length=30, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     ativo = models.BooleanField(default=True)
     foto = models.ImageField(upload_to='pet', blank=True, null=True)
@@ -27,3 +28,14 @@ class Pet(models.Model):
 
     class Meta:
         db_table = 'ficha_pet'
+
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=50, null=True)
+    conteudo = models.TextField()
+    data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        db_table = 'noticia'

@@ -39,6 +39,7 @@
                 <h5>Contato</h5>
                 <p><b>Tel.: </b>{{ pet.telefone }}</p>
                 <p><b>Email: </b>{{ pet.email }}</p>
+                <p><b>Bairro: </b>{{ pet.bairro }}</p>
                 <hr class="separa_pet">
                 {% if request.user == pet.user %}
                     <a href="/pet/register/?id={{ pet.id }}">
