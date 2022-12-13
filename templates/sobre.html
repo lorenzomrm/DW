@@ -1,10 +1,9 @@
 
 {% load static %}
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Mi&Au-Adoções</title>
+    <title>Mi&Au-Sobre</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="{% static 'style.css' %}" rel="stylesheet">
 </head>
@@ -17,29 +16,27 @@
     </header>
 
     <div class="navbar">
-        <a href="/">Home</a>
-        <a href=" " class="active">Adoção</a>
-        <a href="\sobre">Sobre</a>
+        <a href="/" >Home</a>
+        <a href="\pet/all/">Adoção</a>
+        <a href=" " class="active">Sobre</a>
         <a href="\noticias">Notícias</a>
-        <a href="\accounts/login" class="right">Login</a>
+        <a href="\login" class="right">Login</a>
+        <a href="/logout/">Sair</a>
     </div>
 
     <div class="content">
-        <article id="anuncios">
-            <h2>Esta é a página com os pets para adoção!</h2><hr>
-            <div class="anuncio">anuncio1</div>
-            <div class="anuncio">anuncio2</div>
-        </article>
         <article>
-            <h2>Cadastre um pet para adoção :)</h2><hr>
-            <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <div id="result"></div>
-                <div class="callout callout-warning">Você precisa estar logado para cadastar um animal!</div>
-                <button type="button" class="btn btn-primary"><a href="\accounts/login" style="color:white">Fazer login</a></button>
+            <h2>O Projeto</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+        </article>
+              <article>
+            <h2>Ações</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+        </article>
     </div>
 
     <button onclick="topFunction()" id="Btn" title="Subir">Ir para o topo</button>
-        </article></div>
+
     <footer>
         Projeto Mi&Au
         <br>
@@ -49,4 +46,3 @@
     </footer>
     <script src="{% static 'botao.js' %}"></script>
 </body>
-</html>

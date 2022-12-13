@@ -1,8 +1,12 @@
 from django.contrib import admin
+from .models import Pet
 
 # Register your models here.
-from django.contrib import admin
 
-from .models import Pets
+#admin.site.register(PetLost)
+@admin.register(Pet)
+class PetAdmin(admin.ModelAdmin):
+    list_display = ['id', 'nome', 'user', 'ativo',]
+    search_fields = ['id', 'user__username']
 
-admin.site.register(Pets)
+

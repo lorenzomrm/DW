@@ -1,0 +1,53 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+  <div class="modal fade" id="modal_confirm">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Deseja remover este pet da adoção?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body text-right">
+            <a href="/pet/delete/{{ pet.id }}/">
+                <button type="button" class="btn btn-danger">Remover</button>
+            </a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>               
+      </div>
+    </div>
+  </div>
+<article>
+    <h1 class="text-center">Detalhes do Pet</h1><hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div style="border-color: green; border-style: solid; width: 356px; height: 300px;">
+                    <img src="{{ pet.foto.url }}" alt="" width="350" height="263" style="margin-top: 16px;">
+                </div>
+                <br>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-8">
+                <h4>{{ pet.nome }}</h4><hr class="separa_pet">
+                <p>Idade: {{ pet.idade }}</p><hr class="separa_pet">
+                <p>Sexo: {{ pet.sexo }}</p><hr class="separa_pet">
+                <p>Espécie: {{ pet.especie }}</p><hr class="separa_pet">
+                <p>Raça: {{ pet.raca }}</p><hr class="separa_pet">
+                <p>Porte: {{ pet.porte }}</p><hr class="separa_pet">
+                <p>{{ pet.descricao }}</p><hr class="separa_pet">
+                <p>É castrado(a)? {{ pet.castrado }}</p><hr class="separa_pet">
+                <h5>Contato</h5>
+                <p><b>Tel.: </b>{{ pet.telefone }}</p>
+                <p><b>Email: </b>{{ pet.email }}</p>
+                <hr class="separa_pet">
+                {% if request.user == pet.user %}
+                    <a href="/pet/register/?id={{ pet.id }}">
+                        <button type="button" class="btn btn-primary">Alterar</button>
+                    </a>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_confirm">Remover</button>
+                {% endif %}
+            </div>
+        </div>
+    </div></article>
+    <br>
+{% endblock %}

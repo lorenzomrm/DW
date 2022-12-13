@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'telainicial.apps.TelainicialConfig',
-    'login',
 ]
 
 MIDDLEWARE = [
@@ -118,4 +117,3 @@ STATICFILES_DIRS = (
     '/static/style.css',
 )
 LOGIN_REDIRECT_URL = '/'
-django_heroku.settings(locals())

@@ -1,23 +1,29 @@
 from django.db import models
-import uuid
-from stdimage import StdImageField
+from django.contrib.auth.models import User
 
 # Create your models here.
-def get_file_path(_instance, filename):
-    ext = filename.split('.')[-1]
-    filename = f'{uuid.uuid4()}.{ext}'
-    return filename
-class Pets(models.Model):
-    MF = [('M', 'Macho'), ('F', 'Fêmea')]
+
+class Pet(models.Model):
+    MF = [('Macho', 'Macho'), ('Fêmea', 'Fêmea')]
     Especies = [('Cão','Cão'), ('Gato','Gato')]
-    Tamanhos = [('XP','Mini'),('P','Pequeno'),('M','Médio'),('G','Grande'),('XG','Extra Grande')]
-    Castracao = [('S', 'Sim'), ('N', 'Não')]
-    nome = models.CharField(max_length=100)
-    idade = models.IntegerField(null=True)
-    sexo = models.CharField(choices=MF, max_length=1)
-    especie = models.CharField(choices=Especies, max_length=4)
-    raca = models.CharField(max_length=30)
-    porte = models.CharField(choices=Tamanhos, max_length=2)
+    Tamanhos = [('Mini','Mini'),('Pequeno','Pequeno'),('Médio','Médio'),('Grande','Grande'),('Extra Grande','Extra Grande')]
+    Castracao = [('Sim', 'Sim'), ('Não', 'Não')]
+    nome = models.CharField(max_length=25, null=True)
+    idade = models.PositiveIntegerField(null=True)
+    sexo = models.CharField(choices=MF, max_length=5, null=True)
+    especie = models.CharField(choices=Especies, max_length=4, null=True)
+    raca = models.CharField(max_length=30, null=True)
+    porte = models.CharField(choices=Tamanhos, max_length=12, null=True)
     descricao = models.TextField()
-    castrado = models.CharField(choices=Castracao, max_length=1)
-    imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
+    castrado = models.CharField(choices=Castracao, max_length=3, null=True)
+    telefone = models.CharField(max_length=11, null=True)
+    email = models.EmailField(null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ativo = models.BooleanField(default=True)
+    foto = models.ImageField(upload_to='pet', blank=True, null=True)
+    
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        db_table = 'ficha_pet'

@@ -36,6 +36,10 @@ hr{
     border-top: 3px dashed lightblue;
 }
 
+.separa_pet{
+    border-top: 1px dashed lightblue;
+}
+
 #titulo{
     font-size: 80px;
     font-weight: 700;
