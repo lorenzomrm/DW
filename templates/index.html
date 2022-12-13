@@ -27,21 +27,32 @@
 
     <div class="content">
         <article>
-            <a href="sobre"><h2>Sobre</h2></a>
-            <p>O projeto Mi&Au é uma plataforma online que busca conectar moradores de Araranguá, criando uma comunidade de notícias, adoções e blog sobre pets!</p>
+            <h2>Sobre</h2><hr class="separa_pet">
+            <p>O projeto Mi&Au é uma plataforma online que busca conectar moradores de Araranguá, criando uma comunidade de notícias, adoções e blog sobre pets! <a href="/sobre">Sabia mais -></a></p>
+            <hr class="separa_pet">
+            <center><img src="{% static 'images/img.png' %}" style="padding:20px; border: 1px solid #eee; margin-bottom: 10px"/></center>
         </article>
         <article>
-            <a href="/pet/all/"><h2>Adoção</h2></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
-            <hr><br>
+            <h2>Adoção</h2><hr class="separa_pet">
+            <p>Usando a Mi&Au você pode ver ou cadastar pets que estão para adoção!</p>
+            <hr class="separa_pet">
+            <div class="navbar">
+                <a href="/pet/all/">Ver pets</a>
+            </div>
         </article>
         <article>
-            <h2>Cadastrar</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+            <h2>Cadastrar</h2><hr class="separa_pet">
+            <p>Para cadastrar pets para adoção você precisa estar logado!</p>
+            <div class="navbar">
+                <a href="/pet/register/">Cadastrar pet</a>
+            </div>
         </article>
         <article>
-            <a href="noticias"><h2>Blog</h2></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+            <h2>Blog</h2>
+            <p>No blog você encontra notícias, dicas e em breve poderá ver pets perdidos!</p><hr class="separa_pet">
+            <div class="navbar">
+                <a href="/noticias">Acessar</a>
+            </div>
         </article>
     </div>
 

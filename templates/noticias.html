@@ -28,7 +28,24 @@
     <div class="content">
         <article>
             <h2>Notícias</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+            <p>Aqui você encontra notícias da comunidade.</p>
+            <a href="\noticia/register/" >Cadastrar</a>
+               <div class="container">
+            <div class="row">
+                {% for n in noticia %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="../detail/{{ n.id }}">
+                                <div class="container">
+                                    <p>{{ n.titulo}}</p>
+                                    <p>{{ n.conteudo}}</p>
+                                </div>
+                            </div>
+                        </a>
+                        <br>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         </article>
         <article>
             <h2>Procura-se</h2>
@@ -36,7 +53,7 @@
         </article>
         <article>
             <h2>Blog</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque odit iste totam enim maxime labore ipsa praesentium voluptatibus, similique consectetur laboriosam, saepe dolorem debitis ea tempore illum. Commodi, expedita voluptatum.</p>
+            <p>Área para compartilhamento de dicas. Em construção...</p>
         </article>
     </div>
 

@@ -16,7 +16,7 @@
 
     <div class="navbar">
         <a href="/">Home</a>
-        <a href=" " class="active">Adoção</a>
+        <a href="\pet/all" class="active">Adoção</a>
         <a href="\sobre">Sobre</a>
         <a href="\noticias">Notícias</a>
         <a href="/login" class="right">Login</a>
@@ -26,6 +26,7 @@
 
     <br>
 <article>
+    <div class="container">
     <h1 class="text-center">Cadastrar Pet para adoção</h1>
     <form enctype="multipart/form-data" action="submit", method="POST">{% csrf_token %}
         <div class="container">
@@ -96,7 +97,7 @@
             <div class="form-group">
                 <label for="bairro">Bairro:</label>
                 <input type="text" maxlength="30" class="form-control" name="bairro" value="{{ pet.bairro }}">
-            </div>
+            </div><hr>
             <button type="submit" class="btn btn-primary">
                 {% if pet %}
                     Alterar
@@ -105,8 +106,8 @@
                 {% endif %}
             </button>
         </div>
-      </form>
-</article>
+      </form></div></article>
+
       <br>
 {% endblock %}
     <button onclick="topFunction()" id="Btn" title="Subir">Ir para o topo</button>

@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Pet
+from .models import Pet, Noticia
 from django.contrib.auth import logout
 # Create your views here.
 
@@ -53,6 +53,37 @@ def set_pet(request):
                                 user=user, foto=file)
     url = '/pet/detail/{}/'.format(pet.id)
     return redirect(url)
+
+@login_required(login_url='/login/')
+def register_noticia(request):
+    noticia_id = request.GET.get('id')
+    if noticia_id:
+        noticia = Noticia.objects.get(id=noticia_id)
+    return render(request, 'register-noticia.html')
+@login_required(login_url='/login/')
+def set_noticia(request):
+    titulo = request.POST.get('titulo')
+    conteudo = request.POST.get('conteudo')
+    data = request.POST.get('data')
+    noticia_id = request.POST.get('noticia_id')
+    user = request.user
+    if noticia_id:
+        noticia = Noticia.objects.get(id=noticia_id)
+        if user == noticia.user:
+            noticia.titulo = titulo
+            noticia.conteudo = conteudo
+            noticia.data = data
+            noticia.save()
+        else:
+            noticia = Noticia.Objects.create(titulo = titulo,conteudo = conteudo,data = data)
+    url = '/noticia/{}'.format(noticia.id)
+    return redirect(url)
+
+@login_required(login_url='/login/')
+def delete_noticia(id):
+    noticia = Noticia.objects.get(id=id)
+    noticia.delete()
+    return redirect('/')
 
 @login_required(login_url='/login/')
 def register_pet(request):

@@ -116,4 +116,6 @@ STATICFILES_DIRS = (
 
     '/static/style.css',
 )
+MEDIA_ROOT = os.path.join(BASE_DIR, "pet")
+MEDIA_URL = "/media/pet/"
 LOGIN_REDIRECT_URL = '/'
