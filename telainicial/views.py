@@ -137,3 +137,6 @@ def sobre(request):
 
 def noticias(request):
     return render(request, 'noticias.html')
+
+def handler_404(request,exception):
+    return render(request,'404.html')

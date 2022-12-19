@@ -17,17 +17,18 @@
       </div>
     </div>
   </div>
+<div class="container">
 <article>
     <h1 class="text-center">Detalhes do Pet</h1><hr>
-    <div class="container">
+
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-4">
-                <div style="border-color: green; border-style: solid; width: 356px; height: 300px;">
+                <div style="border-color: #213047; border-style: solid; width: 356px; height: 300px;">
                     <img src="{{ pet.foto.url }}" alt="" width="350" height="263" style="margin-top: 16px;">
                 </div>
                 <br>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-8">
+            <div class="col-sm-12 col-md-12 col-lg-8" style="margin-left:0px">
                 <h4>{{ pet.nome }}</h4><hr class="separa_pet">
                 <p>Idade: {{ pet.idade }}</p><hr class="separa_pet">
                 <p>Sexo: {{ pet.sexo }}</p><hr class="separa_pet">

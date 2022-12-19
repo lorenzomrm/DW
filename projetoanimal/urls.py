@@ -23,7 +23,7 @@ urlpatterns = [
     path('pet/register/submit', views.set_pet),
     path('pet/delete/<slug:id>/', views.delete_pet),
     path('logout/', views.logout_user),
-    path('', RedirectView.as_view(url='pet/all/'))
+    path('', RedirectView.as_view(url='pet/all/')),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
